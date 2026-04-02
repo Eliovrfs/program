@@ -1,64 +1,209 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<style>
-body {
-  font-family: Arial;
-  margin: 0;
-  background: #f8fafc;
-}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VRFS Program</title>
 
-header {
-  background: white;
-  padding: 20px;
-  border-bottom: 1px solid #ddd;
-}
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-.container {
-  max-width: 900px;
-  margin: auto;
-  padding: 20px;
-}
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      background: linear-gradient(135deg, #eef2ff, #f8fafc);
+      color: #0f172a;
+    }
 
-.card {
-  background: white;
-  padding: 20px;
-  margin: 20px 0;
-  border-radius: 10px;
-}
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background: rgba(255,255,255,0.8);
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
 
-button {
-  background: #2563eb;
-  color: white;
-  border: none;
-  padding: 10px;
-  border-radius: 8px;
-}
-</style>
+    header h1 {
+      margin: 0;
+      font-size: 22px;
+      color: #2563eb;
+    }
+
+    nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: #334155;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: #2563eb;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 100px 20px 60px;
+    }
+
+    .hero h2 {
+      font-size: 42px;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      color: #475569;
+      max-width: 600px;
+      margin: auto;
+    }
+
+    .hero button {
+      margin-top: 25px;
+      padding: 14px 24px;
+      font-size: 16px;
+      background: linear-gradient(135deg, #2563eb, #38bdf8);
+      border: none;
+      border-radius: 10px;
+      color: white;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .hero button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      color: #2563eb;
+    }
+
+    .stats {
+      display: flex;
+      justify-content: space-around;
+      margin: 40px 0;
+      text-align: center;
+    }
+
+    .stat h2 {
+      margin: 0;
+      color: #2563eb;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      color: #64748b;
+    }
+
+  </style>
 </head>
 <body>
 
-<header>VRFS Program</header>
+<header>
+  <h1>VRFS</h1>
+  <nav>
+    <a href="#features">Features</a>
+    <a href="#about">About</a>
+    <a href="#join">Join</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h2>Next-Gen Discord Program</h2>
+  <p>
+    VRFS is a powerful and modern Discord system designed for automation, community engagement, and advanced features.
+  </p>
+  <button onclick="joinDiscord()">Join Discord</button>
+</section>
 
 <div class="container">
-  <div class="card">
-    <h2>About</h2>
-    <p>Explain your program here.</p>
+
+  <div class="stats">
+    <div class="stat">
+      <h2>24/7</h2>
+      <p>Uptime</p>
+    </div>
+    <div class="stat">
+      <h2>Fast</h2>
+      <p>Performance</p>
+    </div>
+    <div class="stat">
+      <h2>Secure</h2>
+      <p>System</p>
+    </div>
   </div>
 
-  <div class="card">
-    <h2>Features</h2>
-    <ul>
-      <li>Fast</li>
-      <li>Smart</li>
-      <li>Community Driven</li>
-    </ul>
+  <div id="features" class="grid">
+    <div class="card">
+      <h3>Automation</h3>
+      <p>Automatically handle tasks, moderation, and workflows.</p>
+    </div>
+
+    <div class="card">
+      <h3>Smart Commands</h3>
+      <p>Advanced command system with powerful responses.</p>
+    </div>
+
+    <div class="card">
+      <h3>Community Tools</h3>
+      <p>Engage users with interactive features and systems.</p>
+    </div>
   </div>
 
-  <button onclick="window.open('https://discord.gg/YOUR-LINK')">
-    Join Discord
-  </button>
+  <div id="about" class="card" style="margin-top:30px;">
+    <h3>About VRFS</h3>
+    <p>
+      VRFS is built to enhance Discord communities with powerful tools and a modern system design. Whether you're running a server or building a project, VRFS helps you scale and manage everything easily.
+    </p>
+  </div>
+
+  <div id="join" class="card" style="text-align:center; margin-top:30px;">
+    <h3>Join the Community</h3>
+    <p>Be part of the VRFS Discord server.</p>
+    <button onclick="joinDiscord()">Join Now</button>
+  </div>
+
 </div>
+
+<footer>
+  © 2026 VRFS. All rights reserved.
+</footer>
+
+<script>
+  function joinDiscord() {
+    window.open("https://discord.gg/fFvHPang", "_blank");
+  }
+</script>
 
 </body>
 </html>
