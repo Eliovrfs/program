@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>VRFS Program</title>
 
-  <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
   <style>
@@ -45,6 +44,26 @@
       color: #2563eb;
     }
 
+    /* AI BUTTON */
+    .ai-button {
+      position: fixed;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      background: linear-gradient(135deg, #2563eb, #38bdf8);
+      color: white;
+      padding: 12px 16px;
+      border-radius: 0 10px 10px 0;
+      font-weight: 600;
+      cursor: pointer;
+      z-index: 1000;
+      transition: 0.3s;
+    }
+
+    .ai-button:hover {
+      transform: translateY(-50%) translateX(5px);
+    }
+
     .hero {
       text-align: center;
       padding: 100px 20px 60px;
@@ -52,30 +71,16 @@
 
     .hero h2 {
       font-size: 42px;
-      margin-bottom: 10px;
-    }
-
-    .hero p {
-      color: #475569;
-      max-width: 600px;
-      margin: auto;
     }
 
     .hero button {
       margin-top: 25px;
       padding: 14px 24px;
-      font-size: 16px;
       background: linear-gradient(135deg, #2563eb, #38bdf8);
       border: none;
       border-radius: 10px;
       color: white;
       cursor: pointer;
-      transition: 0.3s;
-    }
-
-    .hero button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
     }
 
     .container {
@@ -84,39 +89,11 @@
       padding: 20px;
     }
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
-
     .card {
       background: white;
       padding: 20px;
       border-radius: 16px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-      transition: 0.3s;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-    }
-
-    .card h3 {
-      margin-top: 0;
-      color: #2563eb;
-    }
-
-    .stats {
-      display: flex;
-      justify-content: space-around;
-      margin: 40px 0;
-      text-align: center;
-    }
-
-    .stat h2 {
-      margin: 0;
-      color: #2563eb;
+      margin-top: 20px;
     }
 
     footer {
@@ -124,10 +101,12 @@
       padding: 30px;
       color: #64748b;
     }
-
   </style>
 </head>
 <body>
+
+<!-- AI BUTTON -->
+<div class="ai-button" onclick="goToAI()">🤖 AI</div>
 
 <header>
   <h1>VRFS</h1>
@@ -140,68 +119,27 @@
 
 <section class="hero">
   <h2>Next-Gen Discord Program</h2>
-  <p>
-    VRFS is a powerful and modern Discord system designed for automation, community engagement, and advanced features.
-  </p>
   <button onclick="joinDiscord()">Join Discord</button>
 </section>
 
 <div class="container">
-
-  <div class="stats">
-    <div class="stat">
-      <h2>24/7</h2>
-      <p>Uptime</p>
-    </div>
-    <div class="stat">
-      <h2>Fast</h2>
-      <p>Performance</p>
-    </div>
-    <div class="stat">
-      <h2>Secure</h2>
-      <p>System</p>
-    </div>
-  </div>
-
-  <div id="features" class="grid">
-    <div class="card">
-      <h3>Automation</h3>
-      <p>Automatically handle tasks, moderation, and workflows.</p>
-    </div>
-
-    <div class="card">
-      <h3>Smart Commands</h3>
-      <p>Advanced command system with powerful responses.</p>
-    </div>
-
-    <div class="card">
-      <h3>Community Tools</h3>
-      <p>Engage users with interactive features and systems.</p>
-    </div>
-  </div>
-
-  <div id="about" class="card" style="margin-top:30px;">
+  <div id="about" class="card">
     <h3>About VRFS</h3>
-    <p>
-      VRFS is built to enhance Discord communities with powerful tools and a modern system design. Whether you're running a server or building a project, VRFS helps you scale and manage everything easily.
-    </p>
+    <p>Modern Discord system with powerful tools.</p>
   </div>
-
-  <div id="join" class="card" style="text-align:center; margin-top:30px;">
-    <h3>Join the Community</h3>
-    <p>Be part of the VRFS Discord server.</p>
-    <button onclick="joinDiscord()">Join Now</button>
-  </div>
-
 </div>
 
 <footer>
-  © 2026 VRFS. All rights reserved.
+  © 2026 VRFS
 </footer>
 
 <script>
   function joinDiscord() {
     window.open("https://discord.gg/fFvHPang", "_blank");
+  }
+
+  function goToAI() {
+    window.location.href = "/ai";
   }
 </script>
 
