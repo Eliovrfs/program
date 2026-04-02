@@ -38,7 +38,6 @@ async function send() {
 
     const data = await response.json();
 
-    // Handle loading / errors
     if (data.error) {
       chat.innerHTML += "<p><b>AI:</b> " + data.error + "</p>";
     } else {
