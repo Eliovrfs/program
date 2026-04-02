@@ -3,46 +3,58 @@
 <head>
 <style>
 body {
-  margin: 0;
   font-family: Arial;
-  background: #0a0a0f;
-  color: white;
+  margin: 0;
+  background: #f8fafc;
 }
 
-.hero {
-  text-align: center;
-  padding: 100px 20px;
+header {
+  background: white;
+  padding: 20px;
+  border-bottom: 1px solid #ddd;
 }
 
-.hero h1 {
-  font-size: 60px;
-  color: #00f0ff;
-  text-shadow: 0 0 20px #00f0ff;
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
 }
 
-.hero p {
-  color: #aaa;
+.card {
+  background: white;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 10px;
 }
 
 button {
-  padding: 12px 20px;
-  background: linear-gradient(45deg, #00f0ff, #ff00ff);
-  border: none;
-  border-radius: 10px;
+  background: #2563eb;
   color: white;
-  cursor: pointer;
-}
-
-button:hover {
-  transform: scale(1.1);
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
 }
 </style>
 </head>
 <body>
 
-<div class="hero">
-  <h1>VRFS Program</h1>
-  <p>Your Discord-powered system</p>
+<header>VRFS Program</header>
+
+<div class="container">
+  <div class="card">
+    <h2>About</h2>
+    <p>Explain your program here.</p>
+  </div>
+
+  <div class="card">
+    <h2>Features</h2>
+    <ul>
+      <li>Fast</li>
+      <li>Smart</li>
+      <li>Community Driven</li>
+    </ul>
+  </div>
+
   <button onclick="window.open('https://discord.gg/YOUR-LINK')">
     Join Discord
   </button>
