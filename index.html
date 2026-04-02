@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Discord Program</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0f172a;
+      color: #e2e8f0;
+    }
+
+    header {
+      background: #1e293b;
+      padding: 20px;
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background: #020617;
+      padding: 10px;
+    }
+
+    nav a {
+      color: #38bdf8;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .card {
+      background: #1e293b;
+      padding: 20px;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    h2 {
+      color: #38bdf8;
+    }
+
+    button {
+      background: #38bdf8;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background: #0ea5e9;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: #020617;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    My Discord Program
+  </header>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#features">Features</a>
+    <a href="#join">Join</a>
+  </nav>
+
+  <div class="container">
+
+    <div class="card" id="about">
+      <h2>About</h2>
+      <p>
+        Welcome! This website explains my Discord program. Replace this text with details about what your program does.
+      </p>
+    </div>
+
+    <div class="card" id="features">
+      <h2>Features</h2>
+      <ul>
+        <li>Feature 1 - Describe it</li>
+        <li>Feature 2 - Describe it</li>
+        <li>Feature 3 - Describe it</li>
+      </ul>
+    </div>
+
+    <div class="card" id="join">
+      <h2>Join the Discord</h2>
+      <p>Click below to join the server:</p>
+      <button onclick="joinDiscord()">Join Now</button>
+    </div>
+
+  </div>
+
+  <footer>
+    © 2026 My Discord Program
+  </footer>
+
+  <script>
+    function joinDiscord() {
+      window.open("https://discord.gg/YOUR-LINK-HERE", "_blank");
+    }
+  </script>
+</body>
+</html>
