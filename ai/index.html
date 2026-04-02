@@ -19,23 +19,36 @@ async function send() {
   const chat = document.getElementById("chat");
 
   const userText = input.value;
+  if (!userText) return;
+
   chat.innerHTML += "<p><b>You:</b> " + userText + "</p>";
 
-  const response = await fetch(
-    "https://api-inference.huggingface.co/models/HuggingFaceH4/zephyr-7b-beta",
-    {
-      method: "POST",
-      headers: {
-        "Authorization": "Bearer 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",
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({ inputs: userText })
+  try {
+    const response = await fetch(
+      "https://api-inference.huggingface.co/models/HuggingFaceH4/zephyr-7b-beta",
+      {
+        method: "POST",
+        headers: {
+          "Authorization": "Bearer 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",
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ inputs: userText })
+      }
+    );
+
+    const data = await response.json();
+
+    // Handle loading / errors
+    if (data.error) {
+      chat.innerHTML += "<p><b>AI:</b> " + data.error + "</p>";
+    } else {
+      const aiText = data[0]?.generated_text || "No response";
+      chat.innerHTML += "<p><b>AI:</b> " + aiText.replace(userText, "") + "</p>";
     }
-  );
 
-  const data = await response.json();
-
-  chat.innerHTML += "<p><b>AI:</b> " + (data[0]?.generated_text || "No response") + "</p>";
+  } catch (err) {
+    chat.innerHTML += "<p><b>AI:</b> Error connecting to AI</p>";
+  }
 
   input.value = "";
 }
